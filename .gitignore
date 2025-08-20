@@ -1,0 +1,74 @@
+# 编译生成的可执行文件
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 编译生成的目标文件
+*.o
+*.obj
+*.a
+*.lib
+
+# 调试信息文件
+*.pdb
+*.ilk
+
+# MinGW/GCC 生成的文件
+*.gch
+
+# Visual Studio 生成的文件
+*.vcxproj*
+*.sln
+*.suo
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+
+# 临时文件
+*.tmp
+*.temp
+*~
+
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE 配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 接收文件目录（测试时生成）
+received_files/
+output/
+temp/
+
+# 日志文件
+*.log
+
+# 压缩文件
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# 备份文件
+*.bak
+*.backup
