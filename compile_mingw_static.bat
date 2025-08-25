@@ -16,7 +16,11 @@ echo Compiling ftool.cpp with full static linking...
 
 REM 使用完全静态链接，避免任何DLL依赖
 g++ -O2 -std=c++11 -static ftool.cpp -lws2_32 -o ftool_static.exe
-if %ERRORLEVEL% EQU 0 (
+if errorlevel 1 (
+    echo.
+    echo Compilation failed!
+    exit /b 1
+) else (
     echo.
     echo Compilation successful!
     echo Generated: ftool_static.exe (fully static)
@@ -24,8 +28,5 @@ if %ERRORLEVEL% EQU 0 (
     echo Usage examples:
     echo   ftool_static.exe server 8080 C:\received_files
     echo   ftool_static.exe client 127.0.0.1 8080 test.txt
-) else (
-    echo.
-    echo Compilation failed!
 )
 pause
