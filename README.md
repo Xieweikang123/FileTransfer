@@ -15,12 +15,12 @@
 
 ### 使用 MinGW-w64 编译
 ```cmd
-compile_mingw.bat
+compile_mingw_static.bat
 ```
 
 ### 手动编译
 ```cmd
-g++ -O2 -std=c++11 -static-libgcc -static-libstdc++ ftool.cpp -lws2_32 -o ftool.exe
+g++ -O2 -std=c++11 -static ftool.cpp -lws2_32 -o ftool_static.exe
 ```
 
 ### 文件大小说明
@@ -55,7 +55,7 @@ g++ -O2 -std=c++11 -static-libgcc -static-libstdc++ ftool.cpp -lws2_32 -o ftool.
 
 ### 服务端模式
 ```cmd
-ftool.exe server <port> <output_dir>
+ftool_static.exe server <port> <output_dir>
 ```
 
 **参数说明：**
@@ -64,12 +64,12 @@ ftool.exe server <port> <output_dir>
 
 **示例：**
 ```cmd
-ftool.exe server 8080 C:\received_files
+ftool_static.exe server 8080 C:\received_files
 ```
 
 ### 客户端模式
 ```cmd
-ftool.exe client <host> <port> <file_path>
+ftool_static.exe client <host> <port> <file_path>
 ```
 
 **参数说明：**
@@ -79,7 +79,7 @@ ftool.exe client <host> <port> <file_path>
 
 **示例：**
 ```cmd
-ftool.exe client 127.0.0.1 8080 C:\test.txt
+ftool_static.exe client 127.0.0.1 8080 C:\test.txt
 ```
 
 ## 传输协议
@@ -164,7 +164,7 @@ ftool.exe client 127.0.0.1 8080 C:\test.txt
 - IDE 配置文件
 - 测试时生成的接收文件目录
 
-**注意：** `ftool.exe` 已在版本库中，但后续编译的文件会被忽略。
+**注意：** 生成的 `ftool_static.exe` 为静态链接单文件，可直接分发；编译产物默认被 `.gitignore` 忽略。
 
 ## 许可证
 

@@ -35,16 +35,16 @@
 
 2. **编译测试**
    ```cmd
-   compile_mingw.bat
+   compile_mingw_static.bat
    ```
 
 3. **功能测试**
    ```cmd
    # 服务端
-   ftool.exe server 8080 received_files
+   ftool_static.exe server 8080 received_files
    
    # 客户端
-   ftool.exe client 127.0.0.1 8080 test.txt
+   ftool_static.exe client 127.0.0.1 8080 test.txt
    ```
 
 4. **提交代码**
@@ -56,7 +56,7 @@
 
 ### 注意事项
 
-- 编译后的 `ftool.exe` 不会被提交（除了初始版本）
+- 编译后的 `ftool_static.exe` 不会被提交
 - 测试时创建的接收目录会被忽略
 - 确保代码修改后能正常编译运行
 
@@ -65,7 +65,7 @@
 ```
 FileTransfer/
 ├── ftool.cpp              # 主源码文件
-├── compile_mingw.bat      # 编译脚本
+├── compile_mingw_static.bat      # 编译脚本（静态链接）
 ├── test.txt               # 测试文件
 ├── README.md              # 主要文档
 ├── QUICKSTART.md          # 快速开始
@@ -73,7 +73,7 @@ FileTransfer/
 ├── DEVELOPMENT.md         # 开发指南
 ├── BUILD_INFO.md          # 构建信息
 ├── .gitignore             # Git 忽略文件
-└── ftool.exe              # 预编译版本
+└── ftool_static.exe       # 预编译版本（可选）
 ```
 
 ### 发布流程

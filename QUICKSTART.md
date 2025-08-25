@@ -6,7 +6,7 @@
 运行以下命令：
 
 ```cmd
-compile_mingw.bat
+compile_mingw_static.bat
 ```
 
 **说明：** 生成的可执行文件约 2.5MB，包含所有必要的运行时库，无需额外依赖。
@@ -15,12 +15,12 @@ compile_mingw.bat
 
 #### 启动服务端
 ```cmd
-ftool.exe server 8080 C:\received_files
+ftool_static.exe server 8080 C:\received_files
 ```
 
 #### 在另一个命令行窗口启动客户端
 ```cmd
-ftool.exe client 127.0.0.1 8080 test.txt
+ftool_static.exe client 127.0.0.1 8080 test.txt
 ```
 
 ## 常见问题解决
@@ -51,9 +51,9 @@ ftool.exe client 127.0.0.1 8080 test.txt
 
 ## 快速测试
 
-1. **编译**：`compile_mingw.bat`
-2. **服务端**：`ftool.exe server 8080 .`
-3. **客户端**：`ftool.exe client 127.0.0.1 8080 test.txt`
+1. **编译**：`compile_mingw_static.bat`
+2. **服务端**：`ftool_static.exe server 8080 .`
+3. **客户端**：`ftool_static.exe client 127.0.0.1 8080 test.txt`
 
 如果一切正常，您应该看到：
 - 服务端显示接收进度

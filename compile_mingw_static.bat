@@ -1,5 +1,5 @@
 @echo off
-echo Compiling with MinGW...
+echo Compiling with MinGW (Fully Static)...
 
 REM 检查 g++ 是否可用
 g++ --version >nul 2>&1
@@ -12,16 +12,18 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo Found g++ compiler
-echo Compiling ftool.cpp...
+echo Compiling ftool.cpp with full static linking...
 
-g++ -O2 -std=c++11 -static-libgcc -static-libstdc++ ftool.cpp -lws2_32 -o ftool.exe
+REM 使用完全静态链接，避免任何DLL依赖
+g++ -O2 -std=c++11 -static ftool.cpp -lws2_32 -o ftool_static.exe
 if %ERRORLEVEL% EQU 0 (
     echo.
     echo Compilation successful!
+    echo Generated: ftool_static.exe (fully static)
     echo.
     echo Usage examples:
-    echo   ftool.exe server 8080 C:\received_files
-    echo   ftool.exe client 127.0.0.1 8080 test.txt
+    echo   ftool_static.exe server 8080 C:\received_files
+    echo   ftool_static.exe client 127.0.0.1 8080 test.txt
 ) else (
     echo.
     echo Compilation failed!

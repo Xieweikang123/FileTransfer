@@ -9,8 +9,8 @@
 | 文件 | 描述 |
 |------|------|
 | `ftool.cpp` | 主源码文件（444行） |
-| `compile_mingw.bat` | MinGW 编译脚本 |
-| `ftool.exe` | 可执行文件（2.5MB，静态链接） |
+| `compile_mingw_static.bat` | MinGW 静态链接编译脚本 |
+| `ftool_static.exe` | 可执行文件（静态链接，无DLL依赖） |
 | `test.txt` | 测试文件 |
 | `.gitignore` | Git 忽略文件配置 |
 
@@ -52,13 +52,13 @@
 
 ```cmd
 # 编译
-compile_mingw.bat
+compile_mingw_static.bat
 
 # 服务端
-ftool.exe server 8080 C:\received_files
+ftool_static.exe server 8080 C:\received_files
 
 # 客户端
-ftool.exe client 127.0.0.1 8080 test.txt
+ftool_static.exe client 127.0.0.1 8080 test.txt
 ```
 
 ### 📝 版本控制

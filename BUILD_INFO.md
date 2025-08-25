@@ -7,7 +7,7 @@
 
 ## 编译命令
 ```cmd
-g++ -O2 -std=c++11 -static-libgcc -static-libstdc++ ftool.cpp -lws2_32 -o ftool.exe
+g++ -O2 -std=c++11 -static ftool.cpp -lws2_32 -o ftool_static.exe
 ```
 
 ## 编译选项说明
@@ -32,11 +32,11 @@ g++ -O2 -std=c++11 -static-libgcc -static-libstdc++ ftool.cpp -lws2_32 -o ftool.
 ## 使用方式
 ```cmd
 # 编译
-compile_mingw.bat
+compile_mingw_static.bat
 
 # 服务端
-ftool.exe server 8080 C:\received_files
+ftool_static.exe server 8080 C:\received_files
 
 # 客户端
-ftool.exe client 127.0.0.1 8080 test.txt
+ftool_static.exe client 127.0.0.1 8080 test.txt
 ```
